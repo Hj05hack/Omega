@@ -1,0 +1,25 @@
+DROP DATABASE IF EXISTS proveedores;
+CREATE DATABASE proveedores CHARSET="UTF8" COLLATE utf8_bin;
+USE proveedores;
+
+CREATE TABLE Categoria(
+id INT NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(100) NOT NULL,
+CONSTRAINT pk_categoria PRIMARY KEY(id_categoria)
+);
+
+CREATE TABLE Pieza(
+id INT NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(100) NOT NULL,
+color VARCHAR(50) NOT NULL,
+precio DECIMAL(7,2) CHECK(precio>0),
+id_categoria INT,
+CONSTRAINT pk_pieza PRIMARY KEY(id),
+CONSTRAINT fk_pieza_categoria FOREIGN KEY(categoria) REFERENCES Categoria(id)
+ON UPDATE CASCADE ON DELETE NO ACTION
+);
+
+
+
+
+
