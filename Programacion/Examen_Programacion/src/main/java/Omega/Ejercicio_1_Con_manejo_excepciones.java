@@ -20,7 +20,7 @@ public class Ejercicio_1_Con_manejo_excepciones {
                 System.out.print("Dime el número de deportistas: ");
                 numerodeportistas=scanner.nextInt();
                 if(numerodeportistas<0){
-                    throw new InputMismatchException();
+                    throw new ExcepcionMia();
                 }
                 else{
                     do{
@@ -45,6 +45,8 @@ public class Ejercicio_1_Con_manejo_excepciones {
             }catch(InputMismatchException e2){
                 System.out.println("Debe ser un numero entero positivo ");
                 scanner.nextLine();
+            }catch(ExcepcionMia e3){
+                e3.getMessage();
             }
         }while(comprobante==0);
     }

@@ -26,11 +26,12 @@ public class Ejercicio_1_Sin_manejo_excepciones {
         }
         //Mostrar los pares
         System.out.println("\nSe mostraran los pares: ");
-        for (Iterator<Integer> iterator = deportistas.iterator(); iterator.hasNext();) {
-            Integer numero = iterator.next();
-            if(numero%2==0 && numero<deportistas.size() && numero!=0){
+        for (Iterator<Integer> it = deportistas.iterator(); it.hasNext();) {
+            Integer numero = it.next();
+            if(numero%2==0 && numero!=0){
                 System.out.println("Deportista "+numero);
             }
         }
+        
     }
 }

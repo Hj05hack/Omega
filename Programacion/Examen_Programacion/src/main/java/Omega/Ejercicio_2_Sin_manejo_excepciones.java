@@ -32,18 +32,14 @@ public class Ejercicio_2_Sin_manejo_excepciones{
         marcasMostradas=0;
         System.out.print("Introduce las marcas mostrar (máximo "+longitud+"): ");
         numeroMarcas=sc.nextInt();
-        if(numeroMarcas<0){
-            throw new InputMismatchException();
-        }
-        if(numeroMarcas>longitud){
-            throw new IndexOutOfBoundsException();
-        }
-        else{
-            Iterator<String> iterator = pianos.iterator();
-            while(iterator.hasNext()&& marcasMostradas<numeroMarcas){
-                System.out.println("Marca "+(marcasMostradas+1)+": "+iterator.next());
-                marcasMostradas++;
+        do{
+            if(numeroMarcas<0 && marcasMostradas<numeroMarcas){
+                Iterator<String> iterator = pianos.iterator();
+                while(iterator.hasNext()&& marcasMostradas<numeroMarcas){
+                    System.out.println("Marca "+(marcasMostradas+1)+": "+iterator.next());
+                    marcasMostradas++;
+                }
             }
-        }  
+        }while(marcasMostradas<numeroMarcas);  
     }
 }

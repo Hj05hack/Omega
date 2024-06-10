@@ -36,7 +36,7 @@ public class Ejercicio_2_Con_manejo_excepciones{
                 System.out.print("Introduce las marcas mostrar (máximo "+longitud+"): ");
                 numeroMarcas=sc.nextInt();
                 if(numeroMarcas<0){
-                    throw new InputMismatchException();
+                    throw new IndexOutOfBoundsException();
                 }
                 if(numeroMarcas>longitud){
                     throw new IndexOutOfBoundsException();
@@ -49,9 +49,6 @@ public class Ejercicio_2_Con_manejo_excepciones{
                     }
                     comprobante++;
                 }
-            }catch(InputMismatchException e){
-                System.out.println("Debe ser un número entero positivo");
-                sc.nextLine();
             }catch(IndexOutOfBoundsException e2){
                 System.out.println("Debe estar dentro del margen");
                 sc.nextLine();
